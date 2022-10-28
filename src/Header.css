@@ -1,0 +1,25 @@
+header {
+    position: sticky;
+    top: 0;
+    margin-bottom: 20px;
+    /* flex-grow: 0.5; */
+}
+
+#headerDiv {
+    background-color: rgb(173, 208, 209);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#appName {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    /* border: solid rgb(173, 208, 209) 5px; */
+    padding: 7px 50px 7px;
+    border-radius: 30px;
+    background-color: rgb(49, 133, 133);
+    color: rgb(173, 208, 209);
+    color: aliceblue;
+}

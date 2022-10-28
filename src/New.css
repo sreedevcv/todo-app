@@ -1,0 +1,53 @@
+#new {
+  background-color: rgb(173, 208, 209);
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  animation: 0.3s ease-in-out 0s 1 slideInTopNew;
+}
+
+#new-todo {
+  background-color: rgb(49, 133, 133);
+  min-width: 795px;
+  border-radius: 30px;
+  /* margin-top: 30px; */
+  padding:10px 20px 10px 20px;
+  font-size: 17px;
+  max-width: 900px;
+  height: 150px;
+  border: none;
+  resize: none;
+  color: aliceblue;
+  font-family: inherit;
+}
+
+#submit-button {
+  background-color: rgb(49, 133, 133);
+  border-radius: 30px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  height: 40px;
+  width: 130px;
+  font-weight: 600;
+  font-size: 18px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  color: aliceblue
+}
+
+#submit-button:hover {
+  cursor: pointer;
+  background-color: rgb(92, 197, 205);
+}
+
+@keyframes slideInTopNew {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(calc(0% + 191px));
+    /* transform: translateY(0%); */
+  }
+}
