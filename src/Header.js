@@ -1,13 +1,13 @@
 import "./Header.css";
 import Nav from "./Nav";
 
-const Header = ({ setSearchKeyword, currPage }) => {
+const Header = () => {
   return (
     <header>
       <div id="headerDiv">
         <h1 id="appName">TODO APP</h1>
       </div>
-      <Nav setSearchKeyword={setSearchKeyword} currPage={currPage} />
+      <Nav/>
     </header>
   );
 };

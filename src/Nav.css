@@ -35,6 +35,9 @@
   font-weight: 100;
   color: black;
   font-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-div:hover {
@@ -63,4 +66,18 @@ a:link {
 
 #nav-container > input:active {
   border: none;
+}
+
+.makeSearchBarDisappear {
+  animation: 2s ease-in 0s 1 disappear;
+  background-color: rgb(49, 133, 133) !important;
+}
+
+@keyframes disappear {
+  0% {
+    background-color: rgb(154, 216, 231);
+  }
+  100% {
+    background-color: rgb(49, 133, 133);
+  }
 }

@@ -1,14 +1,21 @@
 import DeleteButton from "./DeleteButton";
 import "./Home.css";
+import { useContext } from "react";
+import DataContext from "./context/DataContext";
 
-const Home = ({
-  items,
-  handleDelete,
-  handelChecking,
-  searchKeyword,
-  handleShowFull,
-  setCurrPage,
-}) => {
+const Home = () => {
+  const { items, setItems, searchKeyword, setCurrPage } =
+    useContext(DataContext);
+
+  const handleShowFull = (id) => {
+    const newItems = items.map((item) => {
+      if (item.id === id) item.truncated = !item.truncated;
+      return item;
+    });
+
+    setItems(newItems);
+  };
+
   setCurrPage("Home");
 
   return (
@@ -17,12 +24,7 @@ const Home = ({
         if (item.todo.toLowerCase().includes(searchKeyword.toLowerCase())) {
           return (
             <div className="item-container" key={item.id}>
-              <DeleteButton
-                items={items}
-                handleDelete={handleDelete}
-                id={item.id}
-                handelChecking={handelChecking}
-              />
+              <DeleteButton id={item.id} />
 
               <p
                 className="item-text"
@@ -37,7 +39,7 @@ const Home = ({
             </div>
           );
         }
-        return <></>; 
+        return <></>;
       })}
 
       {items.length === 0 && <p>Nothing to do ...</p>}

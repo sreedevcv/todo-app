@@ -1,27 +1,23 @@
 import { useNavigate } from "react-router-dom";
-import "./New.css";
 import { useContext } from "react";
 import DataContext from "./context/DataContext";
 
-const New = () => {
+const Edit = () => {
   const navigate = useNavigate();
-  const { setCurrPage, items, setItems } = useContext(DataContext);
-  setCurrPage("New");
+  const { items, editId, setItems, setCurrPage } = useContext(DataContext);
 
+  setCurrPage("Edit");
   const handleSubmit = (event) => {
-    event.preventDefault();
-    const entry = {};
-    entry.id = items.length > 0 ? items[items.length - 1].id + 1 : 1;
-    entry.timeStamp = new Date().toString();
-    entry.done = false;
-    entry.truncated = true;
-    entry.todo = event.target.newTodo.value;
-    const allTodos = [...items, entry];
-    setItems(allTodos);
+    const newItems = items.map((item) => {
+      if (item.id === editId) item.todo = event.target.newTodo.value;
+      return item;
+    });
+
+    setItems(newItems);
   };
 
   return (
-    <main id="new">
+    <main id="edit-container">
       <form
         onSubmit={(e) => {
           navigate("/");
@@ -34,14 +30,15 @@ const New = () => {
           id="new-todo"
           autoFocus
           spellCheck={false}
-        />
+          defaultValue={items.find((item) => item.id === editId).todo}
+        ></textarea>
         <br />
         <button type="submit" id="submit-button">
-          Add Todo
+          Edit Todo
         </button>
       </form>
     </main>
   );
 };
 
-export default New;
+export default Edit;

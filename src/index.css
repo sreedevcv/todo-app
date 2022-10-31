@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 body {
   min-width: 100vw;
   min-height: 100vh;
   margin: auto;
-  /* font-family: "Alegreya", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
-    font-family: 'Lato', serif;
+  font-family: "Lato", serif;
   background-color: rgb(173, 208, 209);
 }
